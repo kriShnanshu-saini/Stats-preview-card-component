@@ -13,7 +13,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*
+
 body{
     min-height: calc(100vh - 1px);
     background-color: var(--pri-bg);
@@ -27,13 +27,14 @@ body{
 main{
     /* width: 400px;
     max-width: 910px; */
-/*    width: 300px;
+    width: 300px;
     /* width: minmax(375px, 900px); */
-/*    display: flex;
+    display: flex;
     flex-direction:column;
     margin: 3em 1.5em;
     /* margin: 5vh auto; */
-/*    border-radius: .5em;
+    border-radius: .5em;
+    overflow: hidden;
     background-color: var(--pri-card-bg);
 }
 
@@ -45,14 +46,14 @@ main{
     background-blend-mode: overlay ;
     background-size:cover;
     /* filter: blur(1px); */
- /*   border-radius: .5em .5em 0 0;
+    /* border-radius: .5em .5em 0 0; */
 }
 .insights-info{
     width: 100%;
     color:hsl(0, 0%, 100%);
     padding: 2em;
     text-align: center;
-    border-radius: 0 0 .5em .5em;
+    /* border-radius: 0 0 .5em .5em; */
 }
 .insights-info > h1{
     font-size: 1.5rem;
@@ -98,6 +99,7 @@ h1 + p{
     main{
         width:auto;
         flex-direction: row-reverse;
+        position: relative;
     }
     .card-image{
         width: 50%;
@@ -106,131 +108,22 @@ h1 + p{
     .insights-info{
         width: 45%;
         padding: 0;
-        margin: 2em;
+        margin: 3em;
         text-align: left;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+    p.subheading{
+        margin-top: 1em;
+        margin-bottom: 3.5em;
+    }
     .stats{
         flex-direction: row;
-    }
-}
-*/
-
-body{
-    background-color: var(--pri-bg);
-    color: var(--white);
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
-}
-.container{
-    min-width: 270px;
-    max-width: 900px;
-    margin-inline : 2em;
-    background-color: var(--pri-card-bg);
-    display: flex;
-}
-.card{
-    display: flex;
-    border: 2px solid white;
-    border-radius: .5em;
-    overflow: hidden;
-}
-.card-image{
-    background: url('./images/image-header-desktop.jpg'), hsl(277, 64%, 61%);
-    background-blend-mode: multiply;
-    background-size: cover;
-    width: 50%;
-    height: 100%;
-}
-.insight-info{
-    width: 50%;
-    padding: 2em 3em 2em 2em;
-}
-.insight-info h1{
-    font-family: var(--f-inter);
-    font-size: 1.6rem;
-}
-.insight-info span{
-    color:hsl(277, 64%, 61%);
-}
-.insight-info p{
-    font-family: var(--f-inter);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-top: 1.5em;
-    color: var(--p-transparent-white);
-}
-.stats{
-    display: flex;
-    margin-top: 2em;
-}
-.col > h2{
-    font-family: var(--f-inter);
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-.col > p{
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    font-family: var(--f-lexend-deca);
-    font-weight: 400;
-    color:hsla(0, 0%, 100%, 0.6);
-}
-@media only screen and (max-width: 760px ){
-    .container{
-        width: 70%;
-        margin: 0 auto;
-        margin-top: 2em;
-    }
-    .card-image{
-        background: url('./images/image-header-mobile.jpg'), hsl(277, 64%, 61%);
-        background-blend-mode: multiply;
-        background-size: cover;
-        width: 100%;
-        height: 300px;
-    }
-    .card{
-        text-align: center;
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .insight-info{
-        width: 100%;
-    }
-    .insight-info h1{
-        font-size: 2rem;
-        padding-inline: 1em;
-    }
-    .insight-info p{
-        padding-inline : 1.5em;
-    }
-    .stats{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .col{
-        margin-bottom: 1.5em;
-    }
-    .col p{
-        margin-top: .5em;
-    }
-}
-@media only screen and (max-width: 500px){
-    html{
-        font-size: 14px;
-    }
-    .insight-info{
-        padding-inline : .1em
-    }
-    .insight-info h1{
-        padding-inline : .3em;
+        gap: 3em;
+        position: absolute;
+        left: 3em;
+        bottom: 2em;
     }
 }
