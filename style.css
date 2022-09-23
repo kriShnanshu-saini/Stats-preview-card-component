@@ -1,0 +1,111 @@
+:root{
+    --pri-bg : hsl(233, 47%, 7%);
+    --pri-card-bg : hsl(244, 38%, 16%);
+    --pri-accent: hsl(277, 64%, 61%);
+    --white : hsl(0, 0%, 100%);
+    --p-transparent-white : hsla(0, 0%, 100%, 0.75);
+    --h-transparent-white : hsla(0, 0%, 100%, 0.6);
+    --f-inter : 'Inter', sans-serif;
+    --f-lexend-deca : 'Lexend Deca', arial;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: calc(100vh - 1px);
+    background-color: var(--pri-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em auto;
+}
+
+main{
+    /* width: 400px;
+    max-width: 910px; */
+    width: 400px;
+    /* width: minmax(375px, 900px); */
+    display: flex;
+    flex-direction:column;
+    margin: 3em 2em;
+    /* margin: 5vh auto; */
+    border-radius: .5em;
+    background-color: var(--pri-card-bg);
+}
+
+.card-image{
+    width: 100%;
+    height: 300px;
+    background:url("./images/image-header-mobile.jpg"),
+    rgba(113, 78, 146, 0.993);
+    background-blend-mode: overlay ;
+    background-size:cover;
+    filter: blur(1px);
+    border-radius: .5em .5em 0 0;
+}
+.insights-info{
+    width: 100%;
+    color:hsl(0, 0%, 100%);
+    padding: 2.5em;
+    text-align: center;
+    border-radius: 0 0 .5em .5em;
+}
+.insights-info > h1{
+    font-family: var(--f-inter);
+    font-size: minmax(1rem, 1.5rem);
+    font-weight: 700;
+    margin-bottom: .75em;
+}
+h1 > span{
+    color:var(--pri-accent);
+}
+h1 + p{
+    font-family: var(--f-lexend-deca);
+    color: var(--p-transparent-white);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 2em;
+}
+.stats{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.col h2{
+    font-family: var(--f-inter);
+    color: --h-transparent-white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.col p{
+    font-family: var(--f-lexend-deca);
+    color: var(--p-transparent-white);
+    text-transform: uppercase;
+    font-weight: 400;
+    padding-top: .2em;
+}
+@media (min-width: 700px ){
+    main{
+        margin : 0 auto;
+        /* min-width: 725px;  */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "info image";
+    }
+    .card-image{
+        height: 100%;
+        min-width: 420px;
+        background-position: center;
+    }
+    .insights-info{
+        grid-area: info;
+        text-align: left;
+    }
+    .stats{
+        flex-direction:row ;
+    }
+}
